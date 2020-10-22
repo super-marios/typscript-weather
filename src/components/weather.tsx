@@ -20,6 +20,14 @@ const WeatherStyle = styled.div`
   img {
     width: 100%;
   }
+
+  .lowerCard {
+    div {
+      text-align: center;
+      padding: 7px 0;
+      font-weight: 700;
+    }
+  }
 `;
 
 const Weather: React.FC<{ weather: WeatherType }> = ({ weather }) => {
@@ -31,9 +39,12 @@ const Weather: React.FC<{ weather: WeatherType }> = ({ weather }) => {
         <img src={BgSeoul} alt="" />
       </div>
       <div className="lowerCard">
-        <span>Temp: {weather.temp} &deg;</span>
-        <br />
-        <span>Feels Like: {weather.feels_like}</span>
+        <div>
+          <span>Temp: {weather.temp} &deg;</span>
+        </div>
+        <div>
+          <span>Feels Like: {weather.feels_like}&deg;</span>
+        </div>
       </div>
     </WeatherStyle>
   );
